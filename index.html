@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Mining Big Data Sets Seminar Open Data FIB-UPC</title>
+
+		<meta name="description" content="Presentation on Mining Big Data Sets, Seminar for Open Data course at FIB-UPC Master in Innovation and Research in Informatics, Data Mining and Business Intelligence">
+		<meta name="author" content="Christine Doig">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/fibupc.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
+
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+				<!-- Cover slide Mining Big Data Sets -->
+				<section>
+					<h2>Mining Big Data Sets</h2>
+					<h4>Open Data Seminar- MIRI - FIB-UPC</h4>
+					<img src="images/logo-FIB.gif" alt="FIB logo" width="60%" align="center" border="4">
+					<p><small>by Christine Doig and Maryam Pashmi</small></p>
+				</section>
+
+				<!-- Index -->
+				<section>
+					<h3>Index</h3>
+					<p>
+						<ol>
+							<li>Introduction</li>
+								<ul>
+									<li>Open Data context</li>
+									<li>Data Mining</li>
+									<li>Big Data</li>
+								</ul>
+							<li>Applications and algorithms</li>
+							<li>Big Data story and evolution</li>
+							<li>Map reduce framework</li>
+							<li>Data Mining Tools</li>
+								<ul>
+									<li>Mahout</li>
+									<li>R on Hadoop</li>
+									<li>Cascading</li>
+									<li>Python</li>
+								</ul>
+							<li>Summary</li>
+							<li>Resources and Recommendations</li>
+						</ol>
+					</p>
+				</section>
+
+				<!-- Context and Introduction -->
+				<section>
+					<section>
+					<h3>Mining Big Data Sets</h3>
+					<hr>
+					<p>
+						<ol>
+							<li class="fragment grow highlight-blue">Introduction</li>
+							<li>Applications and algorithms</li>
+							<li>Big Data story and evolution</li>
+							<li>Map reduce framework</li>
+							<li>Data Mining Tools</li>
+							<li>Summary</li>
+							<li>Resources and Recommendations</li>
+						</ol>
+					</p>
+					</section>
+
+					<section>
+						<div>
+							<p align="left">1. Introduction</p>
+							<hr>
+						</div>
+						<h3>Open Data</h3>
+						<figure>
+							<img src="images/opendatacontext.png" width="90%" align="center">
+							<figcaption>Source: Oscar Romero, OpenData, MIRI-FIB-UPC</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<div>
+							<p align="left">1. Introduction</p>
+							<hr>
+						</div>
+						<h3>Open Data Syllabus</h3>
+						<p>The focus of this course is on enriching the available own data (i.e., data owned by the organization) with external repositories (special attention will be paid on Open Data), in order to <span class="fragment grow highlight-blue">gain insights into the organization business domain</span></p>
+						<ul class="fragment roll-in">
+							<li>MD analysis</li>
+							<li>Data Mining</li>
+						</ul>
+					</section>
+
+					<section>
+						<div>
+							<p align="left">1. Introduction</p>
+							<hr>
+						</div>
+						<h3>Data Mining</h3>
+						<img src="images/DIKW-diagram.png" width="50%" align="left">
+						<img src="images/DM-diagram.png" width="50%" align="right">
+						<p>Discovering patterns</p>
+					</section>
+
+					<section>
+						<div>
+							<p align="left">1. Introduction</p>
+							<hr>
+						</div>
+						<h3>Data Mining</h3>
+						<ul>
+							<li>Regression</li>
+							<li>Classification</li>
+							<li>Clustering</li>
+						</ul>
+					</section>
+
+					<section>
+						<div>
+							<p align="left">1. Introduction</p>
+							<hr>
+						</div>
+						<h3>Big Data</h3>
+						<ul>
+							<li>Volume</li>
+							<li>Velocity</li>
+							<li>Variety</li>
+						</ul>
+					</section>
+
+				</section>
+
+				<!-- Applications and algorithms -->
+				<section>
+					
+					<section>
+					<h3>Mining Big Data Sets</h3>
+					<p>
+						<ol>
+							<li>Introduction</li>
+							<li class="fragment grow highlight-blue">Applications and algorithms</li>
+							<li>Big Data story and evolution</li>
+							<li>Map reduce framework</li>
+							<li>Data Mining Tools</li>
+							<li>Summary</li>
+							<li>Resources and Recommendations</li>
+						</ol>
+					</p>
+
+					</section>
+
+					<section>
+						<div>
+							<p align="left">2. DM: Applications and algorithms</p>
+							<hr>
+						</div>
+						<h3>Data Mining algorithms</h3>
+						<ul>
+							<li>Recommender systems</li>
+							<p>Spotify, Amazon, Netflix</p>
+								<img src="">
+								<img src="">
+								<img src="">
+						</ul>
+					</section>
+						
+					<section>
+						<div>
+							<p align="left">2. DM: Applications and algorithms</p>
+							<hr>
+						</div>
+						<h3>Applications and algorithms</h3>
+						<ul>
+							<li>Recommender systems</li>
+							<p>Spotify, Amazon, Netflix</p>
+							<img src="">
+							<p>
+						</ul>
+					</section>
+
+					<section>
+						<div>
+							<p align="left">2. DM: Applications and algorithms</p>
+							<hr>
+						</div>
+						<h3>Applications and algorithms</h3>
+						<ul>
+							<li>Market Basket Analysis</li>
+							<p>Target</p>
+						</ul>
+					</section>
+
+					<section>
+						<div>
+							<p align="left">2. DM: Applications and algorithms</p>
+							<hr>
+						</div>
+						<h3>Applications and algorithms</h3>
+						<ul>
+
+						</ul>
+					</section>
+
+
+					<section>
+						<div>
+							<p align="left">2. DM: Applications and </p>
+							<hr>
+						</div>
+
+					</section>
+
+				</section>
+
+				<!-- Big data story and evolution -->
+				<section>
+
+					<section>
+					<h3>Mining Big Data Sets</h3>
+					<p>
+						<ol>
+							<li>Context and Introduction</li>
+							<li>Applications and algorithms</li>
+							<li class="fragment grow highlight-blue">Big Data story and evolution</li>
+							<li>Map reduce framework</li>
+							<li>Data Mining Tools</li>
+							<li>Summary</li>
+							<li>Resources and Recommendations</li>
+						</ol>
+					</p>
+					</section>
+
+					<section>
+						<div>
+							<p align="left">3. Big data story and evolution</p>
+							<hr>
+						</div>
+					</section>
+
+				</section>
+
+			<!-- Getting more advanced -->
+				<section>
+
+					<section>
+						<h3>Mining Big Data Sets</h3>
+						<p>
+							<ol>
+								<li>Context and Introduction</li>
+								<li>Applications and algorithms</li>
+								<li>Big Data story and evolution</li>
+								<li class="fragment grow highlight-blue">Map reduce framework</li>
+								<li>Data Mining Tools</li>
+								<li>Summary</li>
+								<li>Resources and Recommendations</li>
+							</ol>
+						</p>
+					</section>
+
+					<section>
+						<div>
+							<p align="left">4. Map reduce framework</p>
+							<hr>
+						</div>
+
+					</section>
+
+					<section>
+						<div>
+							<p align="left">4. Map reduce framework</p>
+							<hr>
+						</div>
+
+					</section>
+
+				</section>
+
+				<!-- Data Mining Tools -->			
+				<section>
+
+					<section>
+						<h3>Mining Big Data Sets</h3>
+						<p>
+							<ol>
+								<li>Context and Introduction</li>
+								<li>Applications and algorithms</li>
+								<li>Big Data story and evolution</li>
+								<li>Map reduce framework</li>
+								<li class="fragment grow highlight-blue">Data Mining Tools</li>
+								<li>Summary</li>
+								<li>Resources and Recommendations</li>
+							</ol>
+						</p>
+					</section>
+
+					<section>
+						<div>
+							<p align="left">5. DM Tools</p>
+							<hr>
+						</div>
+
+					</section>
+
+					<section>
+						<div>
+							<p align="left">5. DM Tools</p>
+							<hr>
+						</div>
+					</section>
+
+				</section>
+
+				<!-- Summary -->	
+				<section>
+					<section>
+						<h3>Mining Big Data Sets</h3>
+						<p>
+							<ol>
+								<li>Context and Introduction</li>
+								<li>Applications and algorithms</li>
+								<li>Big Data story and evolution</li>
+								<li>Map reduce framework</li>
+								<li>Data Mining Tools</li>
+								<li class="fragment grow highlight-blue">Summary</li>
+								<li>Resources and Recommendations</li>
+							</ol>
+						</p>
+					</section>
+
+					<section>
+						<div>
+							<p align="left">6. Summary</p>
+							<hr>
+						</div>
+
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h3>Mining Big Data Sets</h3>
+						<p>
+							<ol>
+								<li>Context and Introduction</li>
+								<li>Applications and algorithms</li>
+								<li>Big Data story and evolution</li>
+								<li>Map reduce framework</li>
+								<li>Data Mining Tools</li>
+								<li>Summary</li>
+								<li class="fragment grow highlight-blue">Resources and Recommendations</li>
+							</ol>
+						</p>
+					</section>
+
+					<section>
+						<div>
+							<p align="left">7. Resources and Recommendations</p>
+							<hr>
+						</div>
+						<h3>Resources</h3>
+							<li>Mining Massive Datasets: Stanford course <a href="">Book</a> and <a href="">Slides</a></li>
+							<li>Intro to Hadoop and Mapreduce: <a href="">Udacity MOOC course</a></li>
+
+					</section>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+		<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
